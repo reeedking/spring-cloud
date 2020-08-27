@@ -1,8 +1,8 @@
 package com.reeedking.ribbonconsumer.controller;
 
+import com.reeedking.ribbonconsumer.service.HelloService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 
@@ -10,10 +10,10 @@ import javax.annotation.Resource;
 public class ConsumerController {
 
     @Resource
-    private RestTemplate restTemplate;
+    private HelloService helloService;
 
     @GetMapping("/ribbon-consumer")
-    public String helloConsumer(){
-        return restTemplate.getForEntity("http://eureka-client/hello",String.class).getBody();
+    public String helloConsumer() {
+        return helloService.hello();
     }
 }
