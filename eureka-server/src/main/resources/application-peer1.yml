@@ -2,12 +2,12 @@ spring:
   application:
     name: eureka-server
 server:
-  port: 8082
+  port: 1111
 eureka:
   instance:
     hostname: peer1
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://192.168.0.105:8083/eureka
+      defaultZone: http://localhost:1112/eureka
 

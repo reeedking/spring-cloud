@@ -5,12 +5,12 @@ server:
   port: 1111
 eureka:
   instance:
-    hostname: peer3
+    hostname: localhost
     prefer-ip-address: true
 
   client:
     register-with-eureka: false
     fetch-registry: false
-#    service-url:
-#      defaultZone: http://192.168.0.105:8083/eureka
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 

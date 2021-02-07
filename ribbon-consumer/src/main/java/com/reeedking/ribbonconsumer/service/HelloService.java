@@ -15,7 +15,7 @@ public class HelloService {
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello() {
-        return restTemplate.getForEntity("http://eureka-client/hello", String.class).getBody();
+        return restTemplate.getForEntity("http://hello-service/hello", String.class).getBody();
     }
 
     public String helloFallback() {
